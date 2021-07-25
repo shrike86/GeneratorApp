@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoomGenerator.Views.GeneratorItemDetail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Label Margin="10" TextColor="Black" Text="{Binding GeneratorDescription}" FontSize="Large" HorizontalTextAlignment="Start" />
+        <BoxView BackgroundColor="Black" HeightRequest="0.5"/>
+        <Label Margin="10" TextColor="Black" Text="{Binding GeneratedValue}" />
+        <Button Margin="10" Text="Generate" HorizontalOptions="Start" Clicked="Generate_Clicked" />
+    </StackLayout>
+</ContentPage>

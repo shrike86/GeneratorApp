@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoomGenerator.MainPage">
+    <ScrollView>
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="225"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                    <!--Room Location section -->
+                    <StackLayout Grid.Row="0">
+                    <Label Text="Room Location" TextColor="Black" FontSize="Large" Margin="10" />
+                        <BoxView BackgroundColor="Black" HeightRequest="0.5"/>
+                            <StackLayout >
+                                <Label BackgroundColor="white" TextColor="Black" Text="Place" HorizontalOptions="Center" FontSize="Medium"  Margin="10" />
+                                <Label BackgroundColor="White" Text="{Binding Place}" TextColor="Black" Margin="10"/>
+                                <Button x:Name="btnPlace" Clicked="Place_Clicked" TextColor="black" Text="Add" FontSize="Small" 
+                                        HorizontalOptions="Start" Margin="10">
+                                    <Button.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding IsPlacePopulated}" Value="true">
+                                            <Setter Property="Text" Value="Change"/>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Button" Binding="{Binding IsPlacePopulated}" Value="false">
+                                            <Setter Property="Text" Value="Add"/>
+                                        </DataTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                            </StackLayout>
+                    </StackLayout>
+                    <!--Room Stocking section -->
+                    <StackLayout Grid.Row="1">
+                        <!--<BoxView BackgroundColor="LightGray" HeightRequest="30" Margin="0, 20"/>-->
+                        <Label Text="Room Stocking and Generation" TextColor="Black" FontSize="Large" />
+                        <BoxView BackgroundColor="Black" HeightRequest="0.5"/>
+                        <!-- Basic Room Stocking section -->
+                        <StackLayout >
+                        <Label BackgroundColor="white" TextColor="Black" Text="Basic Room Stocking" FontSize="Medium" HorizontalOptions="Center" 
+                                   Margin="10, 0" />
+                        <Label BackgroundColor="White" Text="{Binding BasicRoomStocking}" TextColor="Black" Margin="10"/>
+                        <Button x:Name="btnRoomStocking" Clicked="RoomStocking_Clicked" TextColor="black" Text="Add" FontSize="Small" 
+                                HorizontalOptions="Start" Margin="10">
+                                <Button.Triggers>
+                                <DataTrigger TargetType="Button" Binding="{Binding IsRoomStockingPopulated}" Value="true">
+                                        <Setter Property="Text" Value="Change"/>
+                                    </DataTrigger>
+                                <DataTrigger TargetType="Button" Binding="{Binding IsRoomStockingPopulated}" Value="false">
+                                        <Setter Property="Text" Value="Add"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                        </Button>
+                    </StackLayout>
+                        <!-- Room Atmosphere section -->
+                        <StackLayout Grid.Row="2">
+                            <BoxView BackgroundColor="Black" HeightRequest="0.5"/>
+                            <Label BackgroundColor="white" TextColor="Black" Text="Room Atmosphere" FontSize="Medium" HorizontalOptions="Center" 
+                                       Margin="10, 0" />
+                            <Label BackgroundColor="White" Text="{Binding RoomAtmosphere}" TextColor="Black" Margin="10"/>
+                            <Button x:Name="btnRoomAtmosphere" Clicked="RoomAtmosphere_Clicked" TextColor="black" Text="Add" FontSize="Small" 
+                                    HorizontalOptions="Start" Margin="10">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding IsRoomAtmospherePopulated}" Value="true">
+                                        <Setter Property="Text" Value="Change"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Button" Binding="{Binding IsRoomAtmospherePopulated}" Value="false">
+                                        <Setter Property="Text" Value="Add"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </StackLayout>
+                        <!-- Prominent Room Ornamentations section -->
+                        <StackLayout >
+                            <BoxView BackgroundColor="Black" HeightRequest="0.5"/>
+                            <Label BackgroundColor="white" TextColor="Black" Text="Prominent Room Ornamentations" FontSize="Medium" HorizontalOptions="Center" 
+                                       Margin="10, 0" />
+                            <Label BackgroundColor="White" Text="{Binding RoomOrnamentation}" TextColor="Black" Margin="10"/>
+                            <Button x:Name="btnRoomOrnamentations" Clicked="RoomOrnamentations_Clicked" TextColor="black" Text="Add" FontSize="Small" 
+                                    HorizontalOptions="Start" Margin="10">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding IsRoomOrnamentationPopulated}" Value="true">
+                                        <Setter Property="Text" Value="Change"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Button" Binding="{Binding IsRoomOrnamentationPopulated}" Value="false">
+                                        <Setter Property="Text" Value="Add"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </StackLayout>
+                    </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
